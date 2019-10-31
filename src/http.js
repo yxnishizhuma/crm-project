@@ -21,7 +21,7 @@ axios.interceptors.request.use(
 // 响应拦截器即异常处理
 axios.interceptors.response.use(
   response => {
-    console.log(response,'response')
+    // console.log(response,'response')
     if (response.status === 200 && response.request.status === 200) {
       // if (response.data) {
       return response.data

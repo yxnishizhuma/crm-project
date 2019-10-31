@@ -25,6 +25,7 @@ const bookManage = {
       data: data
     })
   },
+  //删除
   deleteSubject (id) {
     return axios({
       url: getUrl(`textbook/subjects/${id}`),
