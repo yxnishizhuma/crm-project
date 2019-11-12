@@ -7,6 +7,7 @@
         @on-change="changePage"
         @on-page-size-change="numberPage"
         show-sizer
+        show-total
       />
     </div>
 </template>

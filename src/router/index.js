@@ -9,8 +9,7 @@ import adManager from './adManager'
 import layOut from '@/views/layOut/layOut'
 
 Vue.use(Router)
-
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -33,9 +32,21 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: resolve => require(['@/views/loginPage/login'], resolve),
+      component: resolve => require(['@/views/loginPage/login'], resolve)
     }
 
   ]
 })
 
+router.beforeEach((to, from, next) => {
+  next(true)
+  let token = localStorage.getItem('token')
+  if (token) {
+    if (to.path === '/login') {
+      next()
+    }
+  } else {
+    next('/login')
+  }
+})
+export default router
