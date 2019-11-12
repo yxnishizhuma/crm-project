@@ -23,7 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-  /*input宽度*/
+  /*所有input宽度*/
   .inputWidth {
     width: 300px;
   }
